@@ -151,7 +151,7 @@ def show_prediction_labels_on_image(frame, predictions):
         bottom *= 2
         left *= 2
         # Draw a box around the face using the Pillow module
-        draw.rectangle(((left, top), (right, bottom)), outline=(255, 0, 0))
+        draw.rectangle(((left, top), (right, bottom)), outline=(0, 255, 0))
 
         # There's a bug in Pillow where it blows up with non-UTF-8 text
         # when using the default bitmap font
