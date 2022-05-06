@@ -6,8 +6,12 @@
  pip install face-recognition
 
 """
+import webbrowser
 
+
+from multiprocessing.connection import wait
 import cv2
+
 #open cv detection d'image et ressource
 import math
 #repertoire de calcule geo
@@ -21,6 +25,7 @@ import pickle
 #detection de contour
 from PIL import Image, ImageDraw
 #lecture et manip des image
+from time import sleep
 
 import face_recognition
 from face_recognition.face_recognition_cli import image_files_in_folder
@@ -30,7 +35,7 @@ import numpy as np
 
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'JPG'}
 
-
+nb=0
 def train(train_dir, model_save_path=None, n_neighbors=None, knn_algo='ball_tree', verbose=False):
     """
     Trains a k-nearest neighbors classifier for face recognition.
@@ -131,6 +136,7 @@ def predict(X_frame, knn_clf=None, model_path=None, distance_threshold=0.5):
 
     # Predict classes and remove classifications that aren't within the threshold
     return [(pred, loc) if rec else ("inconnu", loc) for pred, loc, rec in zip(knn_clf.predict(faces_encodings), X_face_locations, are_matches)]
+    
 
 
 def show_prediction_labels_on_image(frame, predictions):
@@ -161,6 +167,17 @@ def show_prediction_labels_on_image(frame, predictions):
         text_width, text_height = draw.textsize(name)
         draw.rectangle(((left, bottom - text_height - 10), (right, bottom)), fill=(0, 0, 255), outline=(0, 0, 255))
         draw.text((left + 6, bottom - text_height - 5), name, fill=(255, 255, 255, 255))
+        
+        if name!='inconnu':
+            print(name)
+            
+            #webbrowser.open('http://google.com')
+            #sleep(2) 
+            # Go to example.com
+            #cv2.destroyAllWindows()
+            #exit(0)
+
+
 
     # Remove the drawing library from memory as per the Pillow docs.
     del draw
