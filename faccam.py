@@ -170,14 +170,8 @@ def show_prediction_labels_on_image(frame, predictions):
         
         if name!='inconnu':
             print(name)
-<<<<<<< HEAD
-            webbrowser.open('http://localhost:4200/account/login?user=khalil')
+            webbrowser.open('http://localhost:3000/#/login')
             sleep(2) 
-=======
-            
-            #webbrowser.open('http://google.com')
-            #sleep(2) 
->>>>>>> parent of 07409dd (Update faccam.py)
             # Go to example.com
             #cv2.destroyAllWindows()
             #exit(0)
