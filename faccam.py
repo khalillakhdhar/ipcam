@@ -170,7 +170,6 @@ def show_prediction_labels_on_image(frame, predictions):
         
         if name!='inconnu':
             print(name)
-            
             webbrowser.open('http://localhost:4200/account/login?user=khalil')
             sleep(2) 
             # Go to example.com
