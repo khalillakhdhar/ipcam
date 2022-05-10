@@ -173,8 +173,8 @@ def show_prediction_labels_on_image(frame, predictions):
             webbrowser.open('http://localhost:3000/#/login')
             sleep(2) 
             # Go to example.com
-            #cv2.destroyAllWindows()
-            #exit(0)
+            cv2.destroyAllWindows()
+            exit(0)
 
 
 
