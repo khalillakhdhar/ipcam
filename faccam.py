@@ -170,7 +170,7 @@ def show_prediction_labels_on_image(frame, predictions):
         
         if name!='inconnu':
             print(name)
-            webbrowser.open('http://localhost:3000/#/login')
+            webbrowser.open('http://localhost:4200/account/login?user=name')
             sleep(2) 
             # Go to example.com
             cv2.destroyAllWindows()
